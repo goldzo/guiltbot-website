@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta property="og:title" content="glo - cmds" />
+    <meta property="og:url" content="./index.html" />
+    <meta
+      property="og:image"
+      content="https://botglo.vercel.app/legal/glo.png"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:description"
+      content="Guilt, a multipurpose discord bot, utilized efficiently, serving over hundreds of users."
+    />
+    <meta name="twitter:card" content="player cards" />
+    <meta name="twitter:site" content="./index.html" />
+    <meta
+      property="keywords"
+      content="Guilt, discord bot, discord, guiltbot, dove vercel, guiltbot.vercel.app, heal rip, greedbot, bleed bot, guilt bot source, how to use guilt bot"
+    />
+    <meta
+      property="og:description"
+      content="Guilt, a multipurpose discord bot, utilized efficiently, serving over hundreds of users."
+    />
+    <meta
+      name="description"
+      content="Guilt, a multipurpose discord bot, utilized efficiently, serving over hundreds of users."
+    />
+    <title>glo - cmds</title>
+    <link rel="icon" href="../images/guilt.png" />
+    <link rel="stylesheet" href="./commands.css" />
+    <script>
+      document.onkeydown = (e) =>
+        e.keyCode === 123 ||
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
+        (e.ctrlKey && e.keyCode === 85)
+          ? (alert("403 forbidden."), false)
+          : undefined;
+    </script>
+  </head>
+  <body>
+    <div id="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search"
+        oninput="Search()"
+      />
+      <ul>
+        <li onclick="navigation('Moderation')">Moderation</li>
+        <li onclick="navigation('Utility')">Utility</li>
+        <li onclick="navigation('Fun')">Fun/Entertainment</li>
+        <li onclick="navigation('User Interaction')">User Interaction</li>
+        <li onclick="navigation('Information')">Information</li>
+        <li onclick="navigation('System/Administration')">
+          System/Administration
+        </li>
+      </ul>
+    </div>
+    <div id="content">
+      <pre id="search-results" style="color: #fff">
+Default prefix = , | [] = optional argument, () = required argument
+ 
+# Moderation
+- purge [amount]: Purges a specified amount of messages from the channel.
+  - Optional Argument: [amount] - Specifies the number of messages to purge. If not provided, the default behavior might be to purge all messages.
+  
+- lock (channel): Locks the specified channel.
+  - Required Argument: (channel) - Specifies the channel to be locked. Without specifying a channel, the command cannot determine which channel to lock.
+
+- unlock (channel): Unlocks the specified channel.
+  - Required Argument: (channel) - Specifies the channel to be unlocked. Without specifying a channel, the command cannot determine which channel to unlock.
+
+- nuke: Clones and deletes the current channel.
+  - No arguments required. This command operates on the current channel where it's executed.
+
+- ban (user) [time]: Bans a user, optionally specifying a duration.
+  - Required Argument: (user) - Specifies the user to be banned.
+  - Optional Argument: [time] - Specifies the duration of the ban. If not provided, the ban might be indefinite.
+
+- warn (user) [reason]: Warns a user, optionally providing a reason.
+  - Required Argument: (user) - Specifies the user to be warned.
+  - Optional Argument: [reason] - Provides a reason for the warning. If not provided, the warning might be issued without a specific explanation.
+
+- roles [user]: Displays the roles of a specified user.
+  - Optional Argument: [user] - Specifies the user whose roles are to be displayed. If not provided, the command might default to displaying the roles of the user who executed the command.
+
+- ticket [subcmd]: Opens a ticket for support or assistance.
+  - Optional Argument: [subcmd] - Specifies a subcommand or additional options for opening a ticket. The necessity of this argument depends on the specific implementation of the ticket system.
+
+- close: Closes a previously opened ticket.
+  - No arguments required. This command operates on the current ticket being closed.
+
+
+
+
+
+# Utility
+- screenshot (url): Shows a screenshot of the specified URL.
+  - Required Argument: (url) - Specifies the URL for which the screenshot is to be displayed.
+
+- enlarge (emoji): Enlarges the specified emoji.
+  - Required Argument: (emoji) - Specifies the emoji to be enlarged.
+
+- afk: Marks the user as AFK (Away From Keyboard).
+  - No arguments required.
+
+- hexcode: Generates a random hexadecimal color code.
+  - No arguments required.
+
+- hex: Converts a color name to its hexadecimal representation.
+  - Required Argument: (color) - Specifies the color name to be converted.
+
+- bi: Displays the user's information.
+  - No arguments required.
+
+- uptime: Displays the bot's uptime.
+  - No arguments required.
+
+- eval: Evaluates JavaScript code.
+  - Required Argument: (code) - Specifies the JavaScript code to be evaluated.
+
+- pack: Packs a set of items.
+  - Required Argument: (items) - Specifies the items to be packed.
+
+- strip: Strips formatting from text.
+  - Required Argument: (text) - Specifies the text from which formatting is to be stripped.
+
+- srv: Displays server information.
+  - No arguments required.
+
+- setav: Sets the bot's avatar.
+  - Required Argument: (url) - Specifies the URL of the avatar to be set.
+
+- set: Sets a configuration value.
+  - Required Argument: (key value) - Specifies the key-value pair to be set.
+
+- ccommand: Customizes a command.
+  - Required Argument: (command response) - Specifies the response for the customized command.
+
+- botinfo: Displays information about the bot.
+  - No arguments required.
+
+- serverinfo: Displays information about the server.
+  - No arguments required.
+
+- membercount: Displays the member count of the server.
+  - No arguments required.
+
+- info: Displays information.
+  - No arguments required.
+
+- pfp: Displays the user's profile picture.
+  - Required Argument: (user) - Specifies the user whose profile picture is to be displayed.
+
+- dev: Executes developer commands.
+  - Required Argument: (command) - Specifies the developer command to be executed.
+
+- welcome channel: Sets the welcome channel.
+  - Required Argument: (channel) - Specifies the channel to be set as the welcome channel.
+
+
+
+
+
+# Fun/Entertainment
+- act: Performs an action.
+  - No arguments required.
+
+- uwu: Converts text to "uwu" language.
+  - Required Argument: (text) - Specifies the text to be converted.
+
+- hit: Hits someone or something.
+  - Required Argument: (target) - Specifies the target to be hit.
+
+- buy juul: Initiates the purchase of a Juul product or service.
+  - No arguments required.
+
+- disable juul: Disables the vape command.
+  - No arguments required.
+
+- enable juul: Enables the vape command.
+  - No arguments required.
+
+- punch: Punches someone or something.
+  - Required Argument: (target) - Specifies the target to be punched.
+
+- tt: Displays content related to TikTok.
+  - No arguments required.
+
+- roblox: Executes commands related to Roblox.
+  - No arguments required.
+
+- steal: Steals something.
+  - Required Argument: (target) - Specifies the target to be stolen from.
+
+- monkey: Acts like a monkey.
+  - No arguments required.
+
+- clown: Acts like a clown.
+  - No arguments required.
+
+- fyp: Displays content related to the "For You Page" on TikTok.
+  - No arguments required.
+
+- tiklink: Provides a link to TikTok.
+  - No arguments required.
+
+- si/serverinfo: Displays server information.
+  - No arguments required.
+
+- ui/userinfo: Displays user information.
+  - Required Argument: (user) - Specifies the user whose information is to be displayed.
+
+- tiktok: Executes commands related to TikTok.
+  - No arguments required.
+
+- guild: Executes commands related to guilds.
+  - No arguments required.
+
+- create: Creates something.
+  - Required Argument: (name) - Specifies the name of the thing to be created.
+
+- test: Executes a test.
+  - No arguments required.
+
+
+
+
+
+# User Interaction
+- ss: Takes a screenshot.
+  - No arguments required.
+
+- av: Retrieves information about a specific user's avatar.
+  - Required Argument: (user) - Specifies the user whose avatar information is to be retrieved.
+
+- banner: Retrieves information about a specific user's banner.
+  - Required Argument: (user) - Specifies the user whose banner information is to be retrieved.
+
+- whisper: Sends a whisper or private message.
+  - Required Arguments: (user), (message) - Specifies the user to whom the message will be sent and the message itself.
+
+- ping: Checks the bot's latency.
+  - No arguments required.
+
+- inv: Provides an invite link.
+  - No arguments required.
+
+- pass: Provides a password.
+  - No arguments required.
+
+- bal: Checks the balance.
+  - No arguments required.
+
+- work: Initiates work activity.
+  - No arguments required.
+
+- sp: Initiates Spotify activity.
+  - No arguments required.
+
+- set: Sets something.
+  - Required Argument: (setting) - Specifies the setting to be set.
+
+- tiktok: Executes commands related to TikTok.
+  - No arguments required.
+
+- roles: Shows the roles of a user.
+  - Required Argument: (user) - Specifies the user whose roles are to be displayed.
+
+
+
+
+
+# Information
+- help: Displays help information or usage instructions.
+  - No arguments required.
+
+- commands: Displays a list of available commands.
+  - No arguments required.
+
+- blist: Shows the list of banned users.
+  - No arguments required.
+
+- wlist: Shows the list of warned users.
+  - No arguments required.
+
+- twitter: Executes commands related to Twitter.
+  - No arguments required.
+
+
+
+
+
+# System/Administration
+- deleterole: Deletes a specific role from the server.
+  - Required Argument: (role) - Specifies the role to be deleted.
+
+- disable juul: Disables the Juul command.
+  - No arguments required.
+
+- enable juul: Enables the Juul command.
+  - No arguments required.
+
+- del: Deletes something.
+  - Required Argument: (target) - Specifies the target to be deleted.
+      </pre>
+    </div>
+    <script src="./commands.js"></script>
+  </body>
+</html>
